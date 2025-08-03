@@ -18,6 +18,11 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  experimental: {
+    // This is required to make NextJS work with the VSCode extension.
+    // See: https://github.com/vercel/next.js/issues/63488
+    allowedDevOrigins: ['https://*.cloudworkstations.dev'],
+  },
 };
 
 export default nextConfig;
