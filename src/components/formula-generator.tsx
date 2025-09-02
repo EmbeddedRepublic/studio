@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useActionState } from 'react';
 import { useFormState, useFormStatus } from 'react-dom';
 import { generateFormulaAction } from '@/app/actions';
 import { Textarea } from '@/components/ui/textarea';
@@ -35,7 +35,7 @@ function SubmitButton() {
 }
 
 export function FormulaGenerator() {
-  const [state, formAction] = useFormState(generateFormulaAction, initialState);
+  const [state, formAction] = useActionState(generateFormulaAction, initialState);
   const [copied, setCopied] = useState(false);
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
